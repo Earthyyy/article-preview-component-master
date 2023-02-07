@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+
+
+:root {
+
+    --clr-very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --clr-desaturated-dark-blue: hsl(214, 17%, 51%);
+    --clr-grayish-blue: hsl(212, 23%, 69%);
+    --clr-light-grayish-blue: hsl(210, 46%, 95%);
+
+    --ff-primary: 'Manrope', sans-serif;
+
+    --fw-medium: 500;
+    --fw-bold: 700;
+
+
+}
+
+
+/* Josh Comeau CSS Reset*/
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/*
+    2. Remove default margin
+  */
+* {
+    margin: 0;
+}
+
+/*
+    3. Allow percentage-based heights in the application
+  */
+html,
+body {
+    min-height: 100vh;
+}
+
+/*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/*
+    6. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/*
+    7. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+
+body {
+    background-color: var(--clr-light-grayish-blue);
+    display: grid;
+    place-content: center;
+    padding-inline: 1.5rem;
+    font-family: var(--ff-primary);
+}
+
+article {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    filter: drop-shadow(0 10px 30px #979797);
+    min-width: 340px;
+}
+
+
+.article__picture {
+    height: 215px;
+    overflow: hidden;
+}
+
+.article__text {
+    padding-inline: 2.125rem;
+    margin-top: 2.5rem;
+}
+
+.article__text > h3 {
+    color: var(--clr-very-dark-grayish-blue);
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: var(--fw-bold);
+    margin-bottom: 1rem;
+}
+
+.article__text > p {
+    color: var(--clr-desaturated-dark-blue);
+    font-size: 13px;
+    line-height: 20px;
+    letter-spacing: .12px;
+}
+
+
+
+
+.article__author {
+    margin-top: 0.875rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.3125rem 2.125rem;
+    box-sizing: content-box;
+    height: 40px;
+}
+
+.article__author.inverted {
+    background-color: var(--clr-very-dark-grayish-blue);
+}
+
+.author__infos,
+.socials__container {
+    display: flex;
+}
+
+.socials__container {
+    justify-content: center;
+    align-items: center;
+    gap: 1.0625rem;
+}
+
+.socials__container > img:hover {
+    cursor: pointer;
+}
+
+.socials__container > p {
+    margin-left: 3px;
+    text-transform: uppercase;
+    color: var(--clr-grayish-blue);
+    letter-spacing: 5px;
+    font-size: 0.8125rem;
+}
+
+span {
+    display: block;
+    font-weight: var(--fw-medium);
+    color: var(--clr-desaturated-dark-blue);
+}
+
+.author__avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.author__name {
+    font-size: 13px;
+    margin-left: 1.06rem;
+    color: var(--clr-very-dark-grayish-blue);
+    letter-spacing: .12px;
+    font-weight: var(--fw-bold);
+}
+
+.icon-container {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--clr-light-grayish-blue);
+}
+
+.icon-container:hover {
+    cursor: pointer;
+}
+
+.icon-container.inverted {
+    background-color: var(--clr-desaturated-dark-blue);
+}
+
+.icon-container.inverted path {
+    fill: white;
+}
+
+.hidden {
+    display: none;
+}
+
+
+@media (min-width: 700px) {
+    article {
+        display: grid;
+        grid-template-columns: 40% auto;
+        max-width: 730px;
+        overflow: visible;
+    }
+
+    .article__picture {
+        grid-row: 1 / span 2;
+        height: auto;
+        overflow: hidden;
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10px;
+    }
+
+    .article__picture > img {
+        height: 100%;
+    }
+
+    .article__text {
+        grid-area: 1 / 2 / span 1 / span 1;
+    }
+
+    .article__text > h3 {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+    }
+
+    .article__author {
+        position: relative;
+        border-bottom-right-radius: 10px;
+    }
+
+
+
+    .socials__container {
+        position: absolute;
+        background-color: var(--clr-very-dark-grayish-blue);
+        right: -17%;
+        top: -73%;
+        padding: 1.125rem 2.3125rem;
+        border-radius: 10px;
+    }
+
+    .socials__container:before {
+        content: "";
+        position: absolute;
+        left:50%;
+        bottom: -12px;
+        transform: translateX(-50%);
+
+        height : 0;
+        width : 0;
+        border-top : 12px solid  var(--clr-very-dark-grayish-blue);
+        border-right : 12px solid transparent;
+        border-left : 12px solid transparent;
+
+    }
+
+    .article__author {
+        margin-top: 3px;
+    }
+
+    .article__author.inverted {
+        background-color: white;
+    }
+
+    .author__infos.hidden {
+        display: flex;
+    }
+}
+
+
+
