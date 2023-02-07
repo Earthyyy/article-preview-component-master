@@ -39,7 +39,7 @@ Users should be able to:
 ### Links
 
 
-- Live Site URL: [Article Preview by Earthyy](https://your-live-site-url.com)
+- Live Site URL: [Article Preview by Earthyy](https://earthyy-article-preview-component.netlify.app/)
 
 ## My process
 
